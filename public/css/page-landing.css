@@ -7,16 +7,31 @@
 
 #container {
   margin: auto;
-  width: 90%;
+  width: min(90%, 112rem);
 }
 
-.location,
-h1,
+.headline a:hover {
+  background: #96feff;
+}
+/* animations */
+#logo {
+  animation-delay: 50ms;
+}
+#location {
+  animation-delay: 100ms;
+}
+
+main h1 {
+  animation-delay: 150ms;
+  font-size: clamp(4rem, 8vw, 8.4rem);
+}
+
 .headline p {
-  height: 16vh;
+  animation-delay: 200ms;
 }
 
 .headline a {
+  animation-delay: 250ms;
   width: 8rem;
   height: 8rem;
   background: #ffd666;
@@ -30,24 +45,51 @@ h1,
   margin: 0 auto;
   transition: background 200ms;
 }
-.headline a:hover {
-  background: #96feff;
-}
-#logo {
-  animation-delay: 50ms;
-}
-#location {
-  animation-delay: 100ms;
-}
+/*desktop version */
+@media (min-width: 760px) {
+  #container {
+    padding: 5rem, 2rem;
+    background: url("../images/bg.svg") no-repeat 80% / clamp(30rem, 54vw, 56rem) ; 
+  }
+  
+  
+  header {
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+  }
 
-main h1 {
-  animation-delay: 150ms;
-}
+  .location, h1, .headline p {
+    height: initial;
+    text-align: initial;
+  }
 
-.headline p {
-  animation-delay: 200ms;
-}
+  .location {
+    text-align: right;
+    font-size:2.4rem;
+    width: clamp(20rem, 20vw, 30rem);
+    line-height: 3.4rem;
+  }
 
-.headline a {
-  animation-delay: 250ms;
-}
+  main h1 {
+    font-weight: bold;
+    line-height: .88;
+
+    width: min(300px, 80%);
+    margin: clamp(10%, 9vh, 12%) 0 4rem;
+  }
+
+  .headline {
+    display:flex;
+    align-items: center;
+    justify-content:space-between;
+  }
+  .headline p {
+    line-height: 2.8rem;
+    width: clamp(20rem, 20vw, 30rem);
+    font-size: 2.2rem;
+  }
+  
+  .headline a {
+    margin: initial;
+  }
