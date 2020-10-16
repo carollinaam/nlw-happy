@@ -94,6 +94,8 @@ main {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 2rem;
+  line-height: 1.2;
+
 }
 
 .open-details div {
@@ -108,14 +110,25 @@ main {
   color: #5C8599;
 }
 
+.open-details img {
+  display: block;
+  margin-bottom: 1rem;
+}
+
 .open-details .open-on-weekends {
+  border-radius: 20px;
+}
+
+.open-on-weekends.open {
   background: linear-gradient(154.16deg, #EDFFF6 7.85%, #FFFFFF 91.03%);
   border: 1px solid #A1E9C5;
   border-radius: 20px;
   color: #37C77F;
 }
 
-.open-details img {
-  display: block;
-  margin-bottom: 1rem;
+.open-on-weekends.close {
+  background: linear-gradient(154.16deg, #fcf0f4 7.85%, #FFFFFF 91.03%);
+  border: 1px solid #ffbcd4;
+  border-radius: 20px;
+  color: #ff669d;
 }
